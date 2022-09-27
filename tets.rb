@@ -1,6 +1,8 @@
 require './person.rb'
+require './student.rb'
 
 puts ale = Person.new("alejandro",false,15)
+puts aleS = Student.new("alejandro",false,15,"math")
 # ale.getId
 # ale.getAge
 # ale.getName
@@ -10,3 +12,4 @@ puts ale = Person.new("alejandro",false,15)
 # ale.getAge
 # ale.getPersmission
 # ale.can_use_services?
+aleS.play_hooky
