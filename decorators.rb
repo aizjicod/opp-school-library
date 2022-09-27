@@ -1,25 +1,26 @@
-require './nameable.rb'
+require './nameable'
 
 class BaseDecorator < Nameable
   attr_accessor :nameable
+
   def initialize(nameable)
+    super()
     @nameable = nameable
   end
+
   def correct_name
     @nameable.correct_name
   end
 end
 
-class  CapitalizeDecorator < BaseDecorator
+class CapitalizeDecorator < BaseDecorator
   def correct_name
     @nameable.correct_name.capitalize
   end
 end
 
-class  TrimmerDecorator < BaseDecorator
+class TrimmerDecorator < BaseDecorator
   def correct_name
-    if(@nameable.correct_name.length > 10)
-      @nameable.correct_name.slice(0,10)
-      end
+    @nameable.correct_name.slice(0, 10) if @nameable.correct_name.length > 10
   end
 end

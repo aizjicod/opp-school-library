@@ -1,11 +1,11 @@
 require './person'
 require './student'
 require './teacher'
-require './decorators.rb'
+require './decorators'
 
 # !this page will only be used to test the functionalities from the classes
 
-puts ale = Person.new(15, 'alejandro', parent_permission: false)
+# puts ale = Person.new(15, 'alejandro', parent_permission: false)
 # puts ale_s = Student.new('alejandro', 15, false, 'math')
 # ale_t = Teacher.new('alejandro', 15, 'math')
 # p ale.id
@@ -20,11 +20,11 @@ puts ale = Person.new(15, 'alejandro', parent_permission: false)
 # p ale_t.can_use_services?
 
 person = Person.new(22, 'maximilianus')
-p "person correct_name"
+p 'person correct_name'
 p person.correct_name
-capitalizedPerson = CapitalizeDecorator.new(person)
-p "person capitalized"
-p capitalizedPerson.correct_name
-capitalizedTrimmedPerson = TrimmerDecorator.new(capitalizedPerson)
-p "person Trimend"
-  p capitalizedTrimmedPerson.correct_name
+capitalized_person = CapitalizeDecorator.new(person)
+p 'person capitalized'
+p capitalized_person.correct_name
+capitalized_trimmed_person = TrimmerDecorator.new(capitalized_person)
+p 'person Trimend'
+p capitalized_trimmed_person.correct_name
