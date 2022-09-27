@@ -1,20 +1,19 @@
-require './person.rb'
-require './student.rb'
-require './Teacher.rb'
+require './person'
+require './student'
+require './teacher'
 
 # !this page will only be used to test the functionalities from the classes
 
-# puts ale = Person.new("alejandro",false,15)
-# puts aleS = Student.new("alejandro",false,15,"math")
-# aleT = Teacher.new("alejandro",15,"math")
-# ale.getId
-# ale.getAge
-# ale.getName
-# ale.setName("pedro")
-# ale.getName
-# ale.setAge(20)
-# ale.getAge
-# ale.getPersmission
-# ale.can_use_services?
-# aleS.play_hooky
-# p aleT.can_use_services?
+puts ale = Person.new(15, 'alejandro', parent_permission: false)
+puts ale_s = Student.new('alejandro', false, 15, 'math')
+ale_t = Teacher.new('alejandro', 15, 'math')
+p ale.id
+p ale.age
+p ale.name
+ale.name = 'pedro'
+p ale.name
+p ale.age = 17
+p ale.age
+ale.can_use_services?
+ale_s.play_hooky
+p ale_t.can_use_services?
