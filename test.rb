@@ -5,7 +5,7 @@ require './teacher'
 # !this page will only be used to test the functionalities from the classes
 
 puts ale = Person.new(15, 'alejandro', parent_permission: false)
-puts ale_s = Student.new('alejandro', false, 15, 'math')
+puts ale_s = Student.new('alejandro', 15, false, 'math')
 ale_t = Teacher.new('alejandro', 15, 'math')
 p ale.id
 p ale.age
