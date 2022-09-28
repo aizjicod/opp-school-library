@@ -39,14 +39,16 @@ puts ale = Person.new(15, 'alejandro', parent_permission: false)
 
 # rental test
 
-book1 = Book.new('big 5','davinchi')
-rental1 = Rental.new('12-1-2022', book1,ale)
-rental2 = Rental.new('20-12-1000', book1,ale)
+book1 = Book.new('big 5', 'davinchi')
+book2 = Book.new('idol', 'hanz')
+rental1 = Rental.new('12-1-2022', book1, ale)
+rental2 = Rental.new('20-12-1000', book2, ale)
 
 # p rental1
 p 'books rental'
-book1.rental.each{|rental| p rental.date}
+book1.rental.each { |rental| p rental.date }
 p 'person rental'
-ale.rental.each{|rental| p rental.date}
+ale.rental.each { |rental| p rental.date }
 p book1.rental.count
 p rental1.book.author
+p rental2.book.author
