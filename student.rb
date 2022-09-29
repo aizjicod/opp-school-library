@@ -1,9 +1,7 @@
 require_relative 'person'
 
 class Student < Person
-  attr_accessor :classroom
-
-  def initialize(name, age, parent_permission, classroom)
+  def initialize(name, age, _parent_permission, classroom)
     super(name, age, parent_permission: true)
     @classroom = classroom
   end
@@ -12,7 +10,7 @@ class Student < Person
     p "¯\(ツ)/¯"
   end
 
-  def classroom=(classroom)
+  def classroom(classroom)
     @classroom = classroom
     classroom.student << (self) unless classroom.student.include?(self)
   end
