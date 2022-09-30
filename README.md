@@ -11,20 +11,59 @@
 ## Built With
 
 - Ruby
-## Getting Started
 
-### Prerequisites
-install git, nodejs, any code editor in your local machine
+## You will be needing:
+
+- A terminal terminal
+- A code editor
+- Ruby (follow the instruction based on your OS)
+```bash
+https://www.ruby-lang.org/en/documentation/installation/
+```
+
 
 ### Setup
-clone the repo or download from https://github.com/Fourteen98/Pokemone.git
 
-### Install dependencies
+### Clone this repository
 
-`npm install`
-### Run the app
+```bash
+git clone https://github.com/fobadara/quest-student-library.git
+```
+### Move into the directory with
 
-`ruby test.rb`
+```bash
+cd quest-student-library
+```
+
+### Run Project
+```bash
+ruby main.rb
+```
+
+### Install linter
+
+```bash
+bundle install
+```
+
+### Run linter
+
+```bash
+rubocop .
+```
+
+### Auto-correct
+
+In auto-correct mode, RuboCop will try to automatically fix offenses:
+
+```bash
+rubocop -A
+```
+ OR
+
+```bash
+rubocop --auto-correct-all
+```
 
 👤 **Author 1**
 
