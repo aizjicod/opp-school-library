@@ -1,9 +1,12 @@
 #!/usr/bin/env ruby
 
 require_relative 'app'
-class Main
-  def options
-    options = [
+def main 
+  app = App.new
+  puts "Welcome to School Library App"
+  loop do
+    puts "\nPlease select an option by number :"
+    puts [
       '',
       '     [1] List all books',
       '     [2] List all people',
@@ -14,15 +17,7 @@ class Main
       '     [7] Exit',
       ''
     ]
-    puts "\nPlease select an option by number :"
-    puts options
-    gets.chomp
-  end
-
-  def run
-    app = App.new
-    loop do
-      value = options
+      value = gets.chomp
       case value
       when '1'
         app.books
@@ -37,10 +32,10 @@ class Main
       when '6'
         app.rentals_by_per_id
       else
+        puts "exiting..."
         break
       end
     end
   end
-end
 
-Main.new.run
+main
