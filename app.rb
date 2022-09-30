@@ -30,8 +30,8 @@ class App
     else
       @list_persons.each_with_index do |per, index|
         print "\n#{index + 1}) - "
-        print "[#{per.class.name}] id: #{per.id} ~ name: #{per.name} ~ age: #{per.age} ~ "
-        print "specialization: #{per.specialization}" if per.methods.include? :specialization
+        print "[#{per.class.name}] id: #{per.id} ~ name: #{per.name} ~ age: #{per.age}"
+        print " ~ specialization: #{per.specialization}" if per.methods.include? :specialization
       end
     end
   end
@@ -87,12 +87,9 @@ class App
     @list_persons.each do |per|
       next unless per.id.equal? person_id
 
-      puts "\nRentals \n"
-      per.rental.each_with_index do |rental, index|
-        print "\n#{index + 1}) - "
-        print "Date: #{rental.date} - "
-        print "Book title: #{rental.book.title} - "
-        print "Person name: #{rental.person.name}. "
+      puts "\nRentals :\n"
+      per.rental.each do |rental|
+        puts "\nDate: #{rental.date}, Book \"#{rental.book.title}\" by #{rental.book.author}"
       end
       person_avalaible = true
     end
