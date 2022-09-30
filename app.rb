@@ -4,12 +4,11 @@ require_relative 'books'
 require_relative 'rentals'
 
 class App
-  attr_accessor :list_books, :list_persons, :rentals
+  attr_accessor :list_books, :list_persons
 
   def initialize
     @list_books = []
     @list_persons = []
-    @rentals = []
   end
 
   def books
@@ -74,8 +73,7 @@ class App
       person_index = number?(check_emptyness(gets.chomp).to_i)
       print 'introduce date: '
       date = check_emptyness(gets.chomp)
-      rental = Rental.new(date, @list_books[book_index - 1], @list_persons[person_index - 1])
-      @rentals << rental
+      Rental.new(date, @list_books[book_index - 1], @list_persons[person_index - 1])
       puts 'a rental was created'
     end
   end
