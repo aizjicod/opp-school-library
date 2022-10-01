@@ -116,7 +116,6 @@ class App
     classroom = check_emptyness(gets.chomp)
     new_student = Student.new(age, name, pa_pe, classroom)
     puts "Created new student with id: #{new_student.id}"
-    @list_persons << new_student
   end
 
   def create_teacher
