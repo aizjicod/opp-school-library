@@ -2,9 +2,12 @@ require_relative 'student'
 require_relative 'teacher'
 require_relative 'books'
 require_relative 'rentals'
+require_relative 'validations'
 
 class App
   attr_accessor :list_books, :list_persons
+
+  include Validations
 
   def initialize
     @list_books = []
@@ -130,22 +133,5 @@ class App
     new_teacher = Teacher.new(age, name, spe)
     puts "Created new teacher with id: #{new_teacher.id}"
     @list_persons << new_teacher
-  end
-
-  def check_emptyness(value)
-    while value.empty?
-      puts 'please enter value again'
-      value = gets.chomp
-    end
-    value
-  end
-
-  def number?(value)
-    while [false, 0].include?(value)
-      puts 'age is not a number'
-      value = check_emptyness(gets.chomp).to_i
-      puts value
-    end
-    value
   end
 end
